@@ -1,0 +1,19 @@
+tx_imagewidthspecificationwizard {
+	hideFieldOnMatch = 1
+	noValueDisabled = 0
+	ownValueDisabled = 0
+	noValueLabel = LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt_content.tx_imagewidthspecificationwizard.noValueLabel
+	ownValueLabel = LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt_content.tx_imagewidthspecificationwizard.ownValueLabel
+	sizes {
+		#75 = 75px - Teaser
+		#180 = 180px - Banner
+	}
+}
+
+### use TSConfig TLO to set a defaultsize
+#TCAdefaults.tt_content.imagewidth = 180
+
+#mod.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.imagewidth = 180
+#templavoila.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.imagewidth = 180
+#mod.wizards.newContentElement.wizardItems.common.elements.image.tt_content_defValues.imagewidth = 180
+#templavoila.wizards.newContentElement.wizardItems.common.elements.image.tt_content_defValues.imagewidth = 180
