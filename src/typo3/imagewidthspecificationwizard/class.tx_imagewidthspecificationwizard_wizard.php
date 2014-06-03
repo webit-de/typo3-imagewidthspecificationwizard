@@ -39,7 +39,9 @@
  *
  */
 
-require_once(PATH_t3lib.'class.t3lib_befunc.php');
+if(defined('PATH_t3lib')) {	
+	require_once(PATH_t3lib . 'class.t3lib_befunc.php');
+}
 require_once(t3lib_extMgm::extPath('lang','lang.php'));
 
 /**
