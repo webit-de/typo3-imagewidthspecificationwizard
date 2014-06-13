@@ -8,8 +8,6 @@ This TYPO3 backendextension attaches a selectfield to contentelements like textp
 TYPO3 Package
 -------------
 
-T3X Package http://typo3.org/extensions/repository/download/imagewidthspecificationwizard/0.2.2/t3x/
-
 TER Entry http://typo3.org/extensions/repository/view/imagewidthspecificationwizard/
 
 Source
