@@ -1,5 +1,11 @@
 2013-04-04 Dan Untenzu <untenzu@webit.de>
 
+	* 0.3.0
+	* FEATURE Compatible with TYPO3 CMS version 6.2
+		* Thanks to Sascha Affolter (http://botweb.de, @botweb) for the patch!
+
+2013-04-04 Dan Untenzu <untenzu@webit.de>
+
 	* 0.2.2
 	* TASK Set new dependency for supported TYPO3 versions
 
