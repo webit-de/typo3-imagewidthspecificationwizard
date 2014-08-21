@@ -1,0 +1,14 @@
+conf.py:
+  project: Wizard for imagewidth field
+  version: 0.1.0
+  release: 0.1.0
+  latex_documents:
+  - - Index
+    - imagewidthspecificationwizard.tex
+    - Wizard for imagewidth field
+    - Dan Untenzu
+    - manual
+  latex_elements:
+    papersize: a4paper
+    pointsize: 10pt
+    preamble: \usepackage{typo3}
