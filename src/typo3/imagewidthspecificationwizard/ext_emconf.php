@@ -11,11 +11,11 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Wizard to specify the field imagewidth in contentelements',
+	'title' => 'Wizard for imagewidth field',
 	'description' => 'This backendextension attaches a selectfield to contentelements like textpic or images to provide a set of default values for the width of an image (eg.: fullsize, half of the content, small teaser etc.).',
 	'category' => 'be',
 	'shy' => 0,
-	'version' => '0.3.0',
+	'version' => '0.3.1',
 	'dependencies' => 'cms',
 	'conflicts' => '',
 	'priority' => '',
