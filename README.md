@@ -1,7 +1,5 @@
-Imagewidth Specification Wizard
-===============================
-
-Wizard to specify the field imagewidth in contentelements.
+Wizard for imagewidth field
+===========================
 
 This TYPO3 backendextension attaches a selectfield to contentelements like textpic or images to provide a set of default values for the width of an image (eg.: fullsize, half of the content, small teaser etc.).
 
@@ -18,9 +16,9 @@ https://github.com/webit-de/typo3-imagewidthspecificationwizard/tree/master/src/
 Documentation
 -------------
 
-Read online (HTML) https://typo3.org/extension-manuals/imagewidthspecificationwizard/current/
+Read online (HTML) http://docs.typo3.org/typo3cms/extensions/imagewidthspecificationwizard/
 
-Download (PDF/SXW) https://github.com/webit-de/typo3-imagewidthspecificationwizard/tree/master/src/typo3/imagewidthspecificationwizard/doc/
+Download (PDF) http://docs.typo3.org/typo3cms/extensions/imagewidthspecificationwizard/_pdf/
 
 License
 -------
@@ -32,10 +30,17 @@ The GNU General Public License can be found at http://www.gnu.org/copyleft/gpl.h
 Author
 ------
 
-Dan Untenzu <untenzu@webit.de> for webit! Gesellschaft für neue Medien mbH
-(http://www.webit.de/)
+Dan Untenzu (<untenzu@webit.de> / [@pixelbrackets](https://github.com/pixelbrackets))
+for webit! Gesellschaft für neue Medien mbH (http://www.webit.de/)
+
+Changelog
+---------
+
+https://github.com/webit-de/typo3-imagewidthspecificationwizard/blob/master/src/typo3/imagewidthspecificationwizard/Changelog.md
 
 Contribution
 ------------
 
-This extension is Open Source so please use, patch, extend or fork it.
+> TYPO3 - inspiring people to share!
+
+This TYPO3 extension is Open Source, so please use, patch, extend or fork it.
