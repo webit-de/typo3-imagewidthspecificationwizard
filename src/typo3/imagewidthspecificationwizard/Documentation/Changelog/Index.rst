@@ -1,5 +1,4 @@
-ChangeLog
+Changelog
 ---------
 
-Please take a look at the »ChangeLog« file inside of the extension
-folder.
+- https://github.com/webit-de/typo3-imagewidthspecificationwizard/blob/master/src/typo3/imagewidthspecificationwizard/Changelog.md

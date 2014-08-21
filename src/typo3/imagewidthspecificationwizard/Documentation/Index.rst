@@ -49,3 +49,4 @@ version 2, available from `www.gnu.org/copyleft/gpl.html
    KnownProblems/Index
    To-doList/Index
    Changelog/Index
+   Contribution/Index

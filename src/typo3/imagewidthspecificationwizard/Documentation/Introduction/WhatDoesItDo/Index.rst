@@ -14,7 +14,3 @@ What does it do?
 
 - If needed, then the administrator is able to allow the selection of
   default values only and deny the use of individual values
-
-- This extension is Open Source so please use, patch, extend or fork it
-
-  - https://github.com/webit-de/typo3-imagewidthspecificationwizard
