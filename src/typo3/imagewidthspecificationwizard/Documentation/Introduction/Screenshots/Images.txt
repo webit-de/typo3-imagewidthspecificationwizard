@@ -1,0 +1,7 @@
+.. |img-image-width-selection|      image:: ../../Images/image-width-selection.png
+.. :width: 60%
+.. :alt: Screenshot image width selection
+
+.. |img-image-width-custom|      image:: ../../Images/image-width-custom.png
+.. :width: 60%
+.. :alt: Screenshot image width selection
