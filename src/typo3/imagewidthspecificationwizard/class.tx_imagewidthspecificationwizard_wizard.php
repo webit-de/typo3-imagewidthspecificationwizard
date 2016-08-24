@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2010-2011 Dan Untenzu <untenzu@webit.de>
+*  (c) Dan Untenzu <untenzu@webit.de>
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -21,28 +21,6 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-/**
- * [CLASS/FUNCTION INDEX of SCRIPT]
- *
- *
- *
- *   52: class tx_imagewidthspecificationwizard_wizard
- *   63:     function main(&$params,&$pObj)
- *   99:     function getOptions(&$modTSconfig, $imagewidth)
- *  147:     function getJSonchange($uid, $hideField, $ownValueDisabled)
- *  178:     function getSelectfield($uid, $collide, $JSonchange, $options)
- *  195:     function getJSpost($uid, $hideField)
- *  210:     function getLabel($label, $labelAlternative = false)
- *
- * TOTAL FUNCTIONS: 6
- * (This index is automatically created/updated by the extension "extdeveval")
- *
- */
-
-if(defined('PATH_t3lib')) {	
-	require_once(PATH_t3lib . 'class.t3lib_befunc.php');
-}
-require_once(t3lib_extMgm::extPath('lang','lang.php'));
 
 /**
  * Class which adds a wizard to imagewidthfield of the tt_content table
@@ -64,12 +42,12 @@ class tx_imagewidthspecificationwizard_wizard {
 	 */
 	function main(&$params,&$pObj)	{
 		// locallang
-		$this->lang = t3lib_div::makeInstance('language');
+		$this->lang = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('language');
 		$this->lang->init($BE_USER->uc['lang']);
 		$this->lang->includeLLFile('EXT:' . $this->extKey . '/locallang.xml');
 
 		// fetch TSconfig/UserTSConfig for current page
-		$modTSconfig = t3lib_BEfunc::getModTSconfig($params['row']['pid'], 'tx_' . $this->extKey);
+		$modTSconfig = \TYPO3\CMS\Backend\Utility\BackendUtility::getModTSconfig($params['row']['pid'], 'tx_' . $this->extKey);
 		ksort($modTSconfig['properties']['sizes.'], SORT_NUMERIC);
 
 		// generate a unique id for the wizardfield
@@ -225,7 +203,4 @@ class tx_imagewidthspecificationwizard_wizard {
 
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/imagewidthspecificationwizard/class.tx_imagewidthspecificationwizard_wizard.php'])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/imagewidthspecificationwizard/class.tx_imagewidthspecificationwizard_wizard.php']);
-}
 ?>
