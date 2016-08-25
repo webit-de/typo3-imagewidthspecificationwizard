@@ -110,8 +110,8 @@ Reference
             LLL:fileadmin/templates/locallang.xml:noValueLabel
 
    Default
-         LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt\_content.tx\_im
-         agewidthspecificationwizard.noValueLabel
+         LLL:EXT:imagewidthspecificationwizard/Resources/Private/Language/
+         locallang.xlf:tt\_content.tx\_imagewidthspecificationwizard.noValueLabel
 
 
 .. container:: table-row
@@ -126,8 +126,8 @@ Reference
          Description for the option to choose an individual value
 
    Default
-         LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt\_content.tx\_im
-         agewidthspecificationwizard.ownValueLabel
+         LLL:EXT:imagewidthspecificationwizard/Resources/Private/Language/
+         locallang.xlf:tt\_content.tx\_imagewidthspecificationwizard.ownValueLabel
 
 
 .. container:: table-row

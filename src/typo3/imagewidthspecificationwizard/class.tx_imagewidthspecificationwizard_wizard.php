@@ -41,11 +41,6 @@ class tx_imagewidthspecificationwizard_wizard {
 	 * @return	string		Returns HTML for the wizard
 	 */
 	function main(&$params,&$pObj)	{
-		// locallang
-		$this->lang = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('language');
-		$this->lang->init($BE_USER->uc['lang']);
-		$this->lang->includeLLFile('EXT:' . $this->extKey . '/locallang.xml');
-
 		// fetch TSconfig/UserTSConfig for current page
 		$modTSconfig = \TYPO3\CMS\Backend\Utility\BackendUtility::getModTSconfig($params['row']['pid'], 'tx_' . $this->extKey);
 		ksort($modTSconfig['properties']['sizes.'], SORT_NUMERIC);
@@ -96,19 +91,15 @@ class tx_imagewidthspecificationwizard_wizard {
 		if ($modTSconfig['properties']['ownValueDisabled'] == false ||
 			$modTSconfig['properties']['ownValueDisabled'] == true && ($this->fieldsMatch == false && !empty($imagewidth))) {
 			$selected = ($this->fieldsMatch == false && !empty($imagewidth))? ' selected="selected"': '';
-			//if(empty($modTSconfig['properties']['ownValueLabel'])) {
-			//	$modTSconfig['properties']['ownValueLabel'] = $this->lang->getLL('tt_content.tx_imagewidthspecificationwizard.ownValueLabel');
-			//}
-			$options = '<option value="--div--"' . $selected . '>' .
-				$this->getLabel($modTSconfig['properties']['ownValueLabel']) . '</option>' . $options;
+			$options = '<option value="--div--"' . $selected . '>'
+				. $this->getLabel($modTSconfig['properties']['ownValueLabel'])
+				. '</option>' . $options;
 		}
 		// prepend option to use no value / clear the field imagewidth (»0« triggers the JavaScript the clear the field automatically)
 		if ($modTSconfig['properties']['noValueDisabled'] == false) {
-			//if(empty($modTSconfig['properties']['noValueLabel'])) {
-			//	$modTSconfig['properties']['noValueLabel'] = $this->lang->getLL('tt_content.tx_imagewidthspecificationwizard.noValueLabel');
-			//}
-			$options = '<option value="0">' . $this->getLabel($modTSconfig['properties']['noValueLabel']) .
-				'</option>' . $options;
+			$options = '<option value="0">'
+				. $this->getLabel($modTSconfig['properties']['noValueLabel'])
+				. '</option>' . $options;
 		}
 
 		$this->fieldsMatch = ($this->fieldsMatch == false && empty($imagewidth))? true:$this->fieldsMatch;
@@ -190,11 +181,11 @@ class tx_imagewidthspecificationwizard_wizard {
 	 * @param	string	Alternative string to use, if no translation is found
 	 * @return	string	The label string - either the original string or the translated value (translated / alternative string if no translation is found but an alternativ string is given / FALSE if no translation is found & an alternativ string isn't given)
 	 */
-	function getLabel($label, $labelAlternative = false) {
+	function getLabel($label, $labelAlternative = FALSE) {
 		$content = $label;
 		if(substr($label, 0, 3) == 'LLL') {
-			$content = $this->lang->sL($label);
-			if ($content == false && !empty($labelAlternative)) {
+			$content = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($label, $this->extKey);
+			if ($content == FALSE && !empty($labelAlternative)) {
 				$content = $labelAlternative;
 			}
 		}
