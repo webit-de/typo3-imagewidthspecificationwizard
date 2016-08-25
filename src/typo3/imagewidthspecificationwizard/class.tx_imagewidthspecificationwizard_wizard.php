@@ -74,6 +74,13 @@ class tx_imagewidthspecificationwizard_wizard {
 	function getOptions(&$modTSconfig, $imagewidth){
 		$options = '';
 
+		if(TRUE === (empty($modTSconfig['properties']))) {
+			$options = '<option value="--div--">'
+				. \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tt_content.tx_imagewidthspecificationwizard.configurationneeded', $this->extKey)
+				. '</option>';
+			return $options;
+		}
+
 		// generate list of predefined values
 		foreach($modTSconfig['properties']['sizes.'] as $size => $description) {
 			$selected = '';
