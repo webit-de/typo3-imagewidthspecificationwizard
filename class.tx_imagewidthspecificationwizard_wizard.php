@@ -33,6 +33,12 @@ class tx_imagewidthspecificationwizard_wizard {
 	var $extKey = 'imagewidthspecificationwizard'; // The extension key.
 
 	/**
+	 * Remember whether the current imagewidth eqals one of the preconfigured sizes
+	 * @var bool
+	 */
+	protected $fieldsMatch = FALSE;
+
+	/**
 	 * Generate the HTML-code for the wizard attached next to every imagewidth-field within
 	 * the TYPO3 backend
 	 *
@@ -40,7 +46,7 @@ class tx_imagewidthspecificationwizard_wizard {
 	 * @param	object		Parent object
 	 * @return	string		Returns HTML for the wizard
 	 */
-	function main(&$params,&$pObj)	{
+	function main(&$params, &$pObj) {
 		// fetch TSconfig/UserTSConfig for current page
 		$modTSconfig = \TYPO3\CMS\Backend\Utility\BackendUtility::getModTSconfig($params['row']['pid'], 'tx_' . $this->extKey);
 		ksort($modTSconfig['properties']['sizes.'], SORT_NUMERIC);
@@ -50,7 +56,7 @@ class tx_imagewidthspecificationwizard_wizard {
 
 		$this->fieldsMatch = false;
 		$options = $this->getOptions($modTSconfig, $params['row']['imagewidth']);
-		// force script to hide the imagewidthfield
+		// force script to hide the imagewidthfield if TSconfig says so
 		if ($modTSconfig['properties']['ownValueDisabled'] == true) {
 			$modTSconfig['properties']['hideFieldOnMatch'] = true;
 			$this->fieldsMatch = true;
@@ -71,7 +77,7 @@ class tx_imagewidthspecificationwizard_wizard {
 	 * @param	string		the current imagewidth of the contentelement
 	 * @return	string		HTML-String with all needed OPTION-tags of the selectfield
 	 */
-	function getOptions(&$modTSconfig, $imagewidth){
+	function getOptions($modTSconfig, $imagewidth){
 		$options = '';
 
 		if(TRUE === (empty($modTSconfig['properties']))) {
@@ -143,10 +149,8 @@ class tx_imagewidthspecificationwizard_wizard {
 					document.getElementsByName(\'' . $fieldName . '\')[0].parentNode.style.display = \'inline\';
 				}' : ''
 			) .
-			'this.blur();
-			/*this.selectedIndex = 0;*/
-			typo3form.fieldGet(\'data[tt_content][' . $uid . '][imagewidth]\',\'int\',\'\',1,\'0\');
-			TBE_EDITOR.fieldChanged(\'tt_content\',\'' . $uid . '\',\'imagewidth\',\'data[tt_content][' . $uid . '][imagewidth]\');
+			'typo3form.fieldGet(\'data[tt_content][' . $uid . '][imagewidth]\', \'int\', \'\', 1, \'0\');
+			TBE_EDITOR.fieldChanged(\'tt_content\',\'' . $uid . '\', \'imagewidth\', \'data[tt_content][' . $uid . '][imagewidth]\');
 			';
 		return $content;
 	}
