@@ -66,7 +66,7 @@ class tx_imagewidthspecificationwizard_wizard {
 		$content = $this->getSelectfield($params['itemName'], $collide, $JSonchange, $options);
 
 		$JSpost = $this->getJSpost($params['itemName'], $modTSconfig['properties']['hideFieldOnMatch'], $this->fieldsMatch);
-		$pObj->additionalJS_post[] = $JSpost;
+		$content .= '<script>' . $JSpost . '</script>';
 
 		return $content;
 	}
