@@ -159,7 +159,7 @@ class tx_imagewidthspecificationwizard_wizard {
 	 */
 	function getSelectfield($uid, $collide, $JSonchange, $options) {
 		$content = '<select onchange="' . $JSonchange . '"' .
-			' name"_WIZARD[tt_content][' . $params['row']['uid'] . '][imagewidth]"' .
+			' name="_WIZARD[tt_content][' . $params['row']['uid'] . '][imagewidth]"' .
 			' class="tceforms-select tceforms-wizardselect"' .
 			' id="tceforms-select-' . $collide . '">' .
 			$options .
