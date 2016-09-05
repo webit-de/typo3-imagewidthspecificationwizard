@@ -55,11 +55,11 @@ class tx_imagewidthspecificationwizard_wizard {
 			$modTSconfig['properties']['hideFieldOnMatch'] = true;
 			$this->fieldsMatch = true;
 		}
-		$JSonchange = $this->getJSonchange($params['row']['uid'], $modTSconfig['properties']['hideFieldOnMatch'], $modTSconfig['properties']['ownValueDisabled']);
+		$JSonchange = $this->getJSonchange($params['row']['uid'], $params['itemName'], $modTSconfig['properties']['hideFieldOnMatch'], $modTSconfig['properties']['ownValueDisabled']);
 
-		$content = $this->getSelectfield($params['row']['uid'], $collide, $JSonchange, $options);
+		$content = $this->getSelectfield($params['itemName'], $collide, $JSonchange, $options);
 
-		$JSpost = $this->getJSpost($params['row']['uid'], $modTSconfig['properties']['hideFieldOnMatch'], $this->fieldsMatch);
+		$JSpost = $this->getJSpost($params['itemName'], $modTSconfig['properties']['hideFieldOnMatch'], $this->fieldsMatch);
 		$pObj->additionalJS_post[] = $JSpost;
 
 		return $content;
@@ -119,26 +119,28 @@ class tx_imagewidthspecificationwizard_wizard {
 	 * a different value in the wizard
 	 *
 	 * @param	string		The uid of the current contentelement
+	 * @param	string		The distinct name of the imagewidth field in the current content element
 	 * @param	bool		Hide the imagewidthfield if a configured value/width is selected (TSconfig)
 	 * @param	bool		Allow the possibility to use an individual value for the imagewidth
 	 * @return	string		Returns the valid JavaScript for the onchange-attribute
 	 */
-	function getJSonchange($uid, $hideField, $ownValueDisabled) {
+	function getJSonchange($uid, $fieldName, $hideField, $ownValueDisabled) {
+		// Double escape JavaScript since its located inside of HTML-tag attributes wraped with quotes
 		$content =
 			// user has selected something else than "own value" (flag --div--) → change
 			// the value of the imagewidth field
 			'if (this.options[this.selectedIndex].value != \'--div--\') {
-				document.editform[\'data[tt_content][' . $uid . '][imagewidth]_hr\'].value = this.options[this.selectedIndex].value;' .
+				document.editform[\'' . $fieldName . '\'].value = this.options[this.selectedIndex].value;' .
 				// if configuration says so then the imagewidth field is shielded
 				(($hideField)?
-					'document.getElementsByName(\'data[tt_content][' . $uid . '][imagewidth]_hr\')[0].parentNode.style.display = \'none\';'
+					'document.getElementsByName(\'' . $fieldName . '\')[0].parentNode.style.display = \'none\';'
 					: ''
 				) .
 			'}' .
 			// if configuration allows own values, than the original imagewidth field is restored
 			((!$ownValueDisabled)?
 				'else {
-					document.getElementsByName(\'data[tt_content][' . $uid . '][imagewidth]_hr\')[0].parentNode.style.display = \'inline\';
+					document.getElementsByName(\'' . $fieldName . '\')[0].parentNode.style.display = \'inline\';
 				}' : ''
 			) .
 			'this.blur();
@@ -151,15 +153,15 @@ class tx_imagewidthspecificationwizard_wizard {
 
 	/* Generate the HTML for the selectfield
 	 *
-	 * @param	string		The uid of the current contentelement
+	 * @param	string		The distinct name of the imagewidth field in the current content element
 	 * @param	string		Unique id for the wizardfield
 	 * @param	string		JavaScript for the onchange-attribute of the select field
 	 * @param	string		HTML string containing all options of the selectfield
 	 * @return	string		HTML of the wizards selectfield
 	 */
-	function getSelectfield($uid, $collide, $JSonchange, $options) {
+	function getSelectfield($fieldName, $collide, $JSonchange, $options) {
 		$content = '<select onchange="' . $JSonchange . '"' .
-			' name="_WIZARD[tt_content][' . $params['row']['uid'] . '][imagewidth]"' .
+			' name="_WIZARD' . $fieldName . '"' .
 			' class="tceforms-select tceforms-wizardselect"' .
 			' id="tceforms-select-' . $collide . '">' .
 			$options .
@@ -170,14 +172,14 @@ class tx_imagewidthspecificationwizard_wizard {
 	/* Hide the field imagewidth if TSconfig-option »hideFieldOnMatch« equals true and
 	 * the current imagewidth eqals one of the preconfigured sizes
 	 *
-	 * @param	string		The uid of the current contentelement
+	 * @param	string		The distinct name of the imagewidth field in the current content element
 	 * @param	bool		Hide the imagewidthfield if a given value/width is selected (TSconfig)
 	 * @return	string		Returns the JavaScript for TYPO3 $additionalJS_post (appended to form)
 	 */
-	function getJSpost($uid, $hideField) {
+	function getJSpost($fieldName, $hideField) {
 		$content = '';
 		if($hideField && $this->fieldsMatch) {
-			$content = 'document.getElementsByName(\'data[tt_content][' . $uid . '][imagewidth]\')[0].parentNode.style.display = \'none\';';
+			$content = 'document.getElementsByName(\'' . $fieldName . '\')[0].parentNode.style.display = \'none\';';
 		}
 		return $content;
 	}
