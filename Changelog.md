@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2016-09-05 Dan Untenzu <untenzu@webit.de>
+
+  * 2.0.0
+  * FEATURE Add composer
+  * !! TASK Move all extension files into the root directory
+
 2016-08-25 Dan Untenzu <untenzu@webit.de>
 
   * 1.0.0
