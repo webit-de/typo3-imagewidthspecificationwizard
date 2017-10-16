@@ -8,6 +8,8 @@ TYPO3 Package
 
 TER Entry http://typo3.org/extensions/repository/view/imagewidthspecificationwizard/
 
+Packagist Entry https://packagist.org/packages/webit-de/imagewidthspecificationwizard/
+
 Source
 ------
 
