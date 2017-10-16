@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2016-10-16 Dan Untenzu <untenzu@webit.de>
+
+  * 3.0.0
+  * FEATURE Add support for TYPO3 8.7
+  * TASK Drop support for TYPO3 6.2
+  * FEATURE Switch to PSR-2
+  * BUGFIX Rename composer vendor key
+
 2016-09-05 Dan Untenzu <untenzu@webit.de>
 
   * 2.1.0
