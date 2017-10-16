@@ -24,7 +24,7 @@ Wizard for imagewidth field
 EXT: Wizard for imagewidth field
 ================================
 
-Extension Key: orphanfiles
+Extension Key: imagewidthspecificationwizard
 
 Author: Dan Untenzu <untenzu@webit.de> for webit! Gesellschaft für
 neue Medien mbH (http://www.webit.de/)
