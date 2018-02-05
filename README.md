@@ -25,7 +25,7 @@ Download (PDF) http://docs.typo3.org/typo3cms/extensions/imagewidthspecification
 License
 -------
 
-GNU General Public License version 2
+GNU General Public License version 2 or later
 
 The GNU General Public License can be found at http://www.gnu.org/copyleft/gpl.html.
 
