@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2018-02-05 Dan Untenzu <untenzu@webit.de>
+
+  * 3.1.0
+  * FEATURE Change license key
+
 2016-10-16 Dan Untenzu <untenzu@webit.de>
 
   * 3.0.0
