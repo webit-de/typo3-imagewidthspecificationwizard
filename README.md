@@ -3,10 +3,19 @@ Wizard for imagewidth field
 
 This TYPO3 backendextension attaches a selectfield to contentelements like textpic or images to provide a set of default values for the width of an image (eg.: fullsize, half of the content, small teaser etc.).
 
-TYPO3 Package
+[![Packagist](https://img.shields.io/packagist/v/webit-de/imagewidthspecificationwizard.svg)](https://packagist.org/packages/webit-de/imagewidthspecificationwizard/)
+[![TYPO3](https://img.shields.io/badge/TYPO3-extension-orange.svg)](https://extensions.typo3.org/extension/imagewidthspecificationwizard/)
+
+Requirements
+------------
+
+* PHP
+* TYPO3
+
+Installation
 -------------
 
-TER Entry http://typo3.org/extensions/repository/view/imagewidthspecificationwizard/
+TER Entry https://extensions.typo3.org/extension/imagewidthspecificationwizard/
 
 Packagist Entry https://packagist.org/packages/webit-de/imagewidthspecificationwizard/
 
@@ -38,7 +47,7 @@ for webit! Gesellschaft für neue Medien mbH (http://www.webit.de/)
 Changelog
 ---------
 
-https://github.com/webit-de/typo3-imagewidthspecificationwizard/blob/master/Changelog.md
+[./Changelog.md](./Changelog.md)
 
 Contribution
 ------------
