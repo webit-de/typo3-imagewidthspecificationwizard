@@ -2,8 +2,8 @@ tx_imagewidthspecificationwizard {
 	hideFieldOnMatch = 1
 	noValueDisabled = 0
 	ownValueDisabled = 0
-	noValueLabel = LLL:EXT:imagewidthspecificationwizard/Resources/Private/Language/locallang.xlf:tt_content.tx_imagewidthspecificationwizard.noValueLabel
-	ownValueLabel = LLL:EXT:imagewidthspecificationwizard/Resources/Private/Language/locallang.xlf:tt_content.tx_imagewidthspecificationwizard.ownValueLabel
+	noValueLabel = LLL:EXT:imagewidthspecificationwizard/Resources/Private/Language/locallang.xlf:tt_content.tx_imagewidthspecificationwizard.no_value
+	ownValueLabel = LLL:EXT:imagewidthspecificationwizard/Resources/Private/Language/locallang.xlf:tt_content.tx_imagewidthspecificationwizard.custom_value
 	sizes {
 		#75 = 75px - Teaser
 		#180 = 180px - Banner

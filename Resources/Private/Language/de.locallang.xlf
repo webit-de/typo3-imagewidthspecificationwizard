@@ -6,15 +6,15 @@
 		  product-name="imagewidthspecificationwizard">
 		<header/>
 		<body>
-			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.noValueLabel">
+			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.no_value">
 				<source>No scaling</source>
 				<target>Keine Skalierung</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.ownValueLabel">
+			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.custom_value">
 				<source>Customized width</source>
 				<target>Individuelle Breite</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.configurationneeded">
+			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.configuration_needed">
 				<source>Configuration needed!</source>
 				<target>Konfiguration unvollständig!</target>
 			</trans-unit>

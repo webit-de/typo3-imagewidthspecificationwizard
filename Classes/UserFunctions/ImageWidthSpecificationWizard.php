@@ -111,7 +111,7 @@ class ImageWidthSpecificationWizard
 
         if (true === (empty($modTSconfig['properties']))) {
             $options = '<option value="--div--">'
-                . LocalizationUtility::translate('tt_content.tx_imagewidthspecificationwizard.configurationneeded', $this->extKey)
+                . LocalizationUtility::translate('tt_content.tx_imagewidthspecificationwizard.configuration_needed', $this->extKey)
                 . '</option>';
 
             return $options;
@@ -235,7 +235,7 @@ class ImageWidthSpecificationWizard
      * Get the label for each option - if string starts with 'LLL' it will be translated with LOCAL_LANG
      *
      * The string to use for translation will not be translated if it does not start with 'LLL',
-     * so use a full LLL scheme like 'LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt_content.tx_imagewidthspecificationwizard.ownValueLabel'
+     * so use a full LLL scheme like 'LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt_content.tx_imagewidthspecificationwizard.custom_value'
      *
      * @param string The string to use for translation
      * @param bool Flag to use alternative string if no translation is found
