@@ -69,7 +69,7 @@ class ImageWidthSpecificationWizard
         $this->fieldsMatch = false;
         $options = $this->getOptions($modTSconfig, $params['row']['imagewidth']);
         // force script to hide the image width field if this is defined in TSconfig
-        if (true === $modTSconfig['properties']['ownValueDisabled']) {
+        if (true === (bool)$modTSconfig['properties']['ownValueDisabled']) {
             $modTSconfig['properties']['hideFieldOnMatch'] = true;
             $this->fieldsMatch = true;
         }
@@ -109,7 +109,7 @@ class ImageWidthSpecificationWizard
     {
         $options = '';
 
-        if (true === (empty($modTSconfig['properties']))) {
+        if (true === empty($modTSconfig['properties'])) {
             $options = '<option value="--div--">'
                 . LocalizationUtility::translate('tt_content.tx_imagewidthspecificationwizard.configuration_needed', $this->extKey)
                 . '</option>';
@@ -131,8 +131,8 @@ class ImageWidthSpecificationWizard
         }
 
         // prepend option to use an individual value (»--div--« is working as a flag for JavaScript)
-        if (false === $modTSconfig['properties']['ownValueDisabled'] ||
-            true === $modTSconfig['properties']['ownValueDisabled'] &&
+        if (false === (bool)$modTSconfig['properties']['ownValueDisabled'] ||
+            true === (bool)$modTSconfig['properties']['ownValueDisabled'] &&
             (false === $this->fieldsMatch && !empty($imagewidth))) {
             $selected = (false === $this->fieldsMatch && !empty($imagewidth)) ? ' selected="selected"' : '';
             $options = '<option value="--div--"' . $selected . '>'
@@ -140,7 +140,7 @@ class ImageWidthSpecificationWizard
                 . '</option>' . $options;
         }
         // prepend option to use no value / clear the field imagewidth (»0« triggers the JavaScript the clear the field automatically)
-        if (false === $modTSconfig['properties']['noValueDisabled']) {
+        if (false === (bool)$modTSconfig['properties']['noValueDisabled']) {
             $options = '<option value="0">'
                 . $this->getLabel($modTSconfig['properties']['noValueLabel'])
                 . '</option>' . $options;
@@ -238,16 +238,16 @@ class ImageWidthSpecificationWizard
      * so use a full LLL scheme like 'LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt_content.tx_imagewidthspecificationwizard.custom_value'
      *
      * @param string The string to use for translation
-     * @param bool Flag to use alternative string if no translation is found
+     * @param string Alternative string if no translation is found
      *
      * @return string The label string - either the original string or the translated value (translated / alternative string if no translation is found but an alternativ string is given / FALSE if no translation is found & an alternativ string isn't given)
      */
-    public function getLabel($label, $labelAlternative = false)
+    public function getLabel($label, $labelAlternative = null)
     {
         $content = $label;
         if (0 === strpos($label, 'LLL')) {
             $content = LocalizationUtility::translate($label, $this->extKey);
-            if (false === $content && !empty($labelAlternative)) {
+            if (false === $content && null !== $labelAlternative) {
                 $content = $labelAlternative;
             }
         }
