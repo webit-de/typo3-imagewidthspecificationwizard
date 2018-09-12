@@ -7,7 +7,7 @@ Configuration
   »tt\_content«, it is just a wizard, attached to the field »imagewidth«
 
 - The configuration for the extension has to be inserted to your pages
-  TSconfig (Edit the page properties of your rootpage, and look for the
+  TSconfig (Edit the page properties of your root page, and look for the
   field »TSconfig«)
 
 .. toctree::

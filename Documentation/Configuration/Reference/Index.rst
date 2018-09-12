@@ -49,12 +49,12 @@ Reference
          Boolean
 
    Description
-         Removes the selectfield option to leave the field »imagewidth« empty.
+         Removes the select field option to leave the field »imagewidth« empty.
 
          **Note:**
 
          Please keep in mind that this extension does not check the fields
-         content, it removes the selectfield option only. So if you want to
+         content, it removes the select field option only. So if you want to
          disallow an empty
 
          field »imagewidth« and force the editor to select a value, then you
@@ -89,7 +89,7 @@ Reference
          String
 
    Description
-         Description for the option in the selectfield to clear the field
+         Description for the option in the select field to clear the field
          »imagewidth«
 
          **Note:**

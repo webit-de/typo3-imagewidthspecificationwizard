@@ -14,7 +14,7 @@ Wizard for imagewidth field
 :Extension name: Wizard for imagewidth field
 :Extension key: imagewidthspecificationwizard
 :Version: 0.1.0
-:Description: This backendextension attaches a selectfield to contentelements like textpic or images to provide a set of default values for the width of an image (eg.: fullsize, half of the content, small teaser etc.).
+:Description: This backend extension attaches a select field to content elements like textpic or images to provide a set of default values for the width of an image (eg.: full size, half of the content, small teaser etc.).
 :Language: en
 :Keywords: textpic, image, width, imagewidth, field, selector, wizard
 :Author: Dan Untenzu <untenzu@webit.de>

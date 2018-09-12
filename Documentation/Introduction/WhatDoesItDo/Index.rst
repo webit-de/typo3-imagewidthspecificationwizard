@@ -1,7 +1,7 @@
 What does it do?
 ^^^^^^^^^^^^^^^^
 
-- This backendextension attaches a selectfield to contentelements like
+- This backend extension attaches a select field to content elements like
   »textpic« or »images« to provide a set of default values for the width
   of an image
 

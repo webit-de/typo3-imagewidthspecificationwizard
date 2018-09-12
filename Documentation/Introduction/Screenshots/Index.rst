@@ -7,7 +7,7 @@ Screenshots
 
 - In the above screenshot the editor is able to choose between
   three different default values, an individual (here »180«) or none
-  (empty field, maxwidth by »css\_styled\_content« will be used)
+  (empty field, max width by »css\_styled\_content« will be used)
 
 |img-image-width-selection|
 
