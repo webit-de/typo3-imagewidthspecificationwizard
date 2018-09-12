@@ -1,4 +1,6 @@
 <?php
+namespace WebitDe\Imagewidthspecificationwizard\UserFunctions;
+
 /***************************************************************
 *  Copyright notice
 *
@@ -29,7 +31,7 @@
  * @package		TYPO3
  * @subpackage	tx_imagewidthspecificationwizard
  */
-class tx_imagewidthspecificationwizard_wizard
+class ImageWidthSpecificationWizard
 {
     public $extKey = 'imagewidthspecificationwizard'; // The extension key.
 

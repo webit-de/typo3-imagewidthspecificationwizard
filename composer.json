@@ -8,6 +8,9 @@
     "php": ">=5.5.0",
     "typo3/cms-core": "^7.6 || ^8.7"
   },
+  "autoload": {
+    "psr-4": {"WebitDe\\Imagewidthspecificationwizard\\": "Classes/"}
+  },
   "replace": {
     "imagewidthspecificationwizard": "self.version",
     "typo3-ter/imagewidthspecificationwizard": "self.version",
