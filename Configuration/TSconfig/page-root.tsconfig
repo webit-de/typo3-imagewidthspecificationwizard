@@ -10,7 +10,7 @@ tx_imagewidthspecificationwizard {
 	}
 }
 
-### use TSConfig TLO to set a defaultsize
+### use TSConfig TLO to set a default size
 #TCAdefaults.tt_content.imagewidth = 180
 
 #mod.wizards.newContentElement.wizardItems.common.elements.textpic.tt_content_defValues.imagewidth = 180
