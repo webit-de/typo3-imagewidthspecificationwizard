@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-25T10:18:20Z" product-name="imagewidthspecificationwizard">
+	<file source-language="en"
+		  datatype="plaintext"
+		  original="messages"
+		  product-name="imagewidthspecificationwizard">
 		<header/>
 		<body>
 			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.noValueLabel">

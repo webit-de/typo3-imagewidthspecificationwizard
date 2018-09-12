@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file target-language="de" datatype="plaintext" original="messages" date="2016-08-25T10:18:20Z" product-name="imagewidthspecificationwizard">
+	<file target-language="de"
+		  datatype="plaintext"
+		  original="messages"
+		  product-name="imagewidthspecificationwizard">
 		<header/>
 		<body>
 			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.noValueLabel">
+				<source>No scaling</source>
 				<target>Keine Skalierung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.ownValueLabel">
+				<source>Customized width</source>
 				<target>Individuelle Breite</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_imagewidthspecificationwizard.configurationneeded">
+				<source>Configuration needed!</source>
 				<target>Konfiguration unvollständig!</target>
 			</trans-unit>
 		</body>
