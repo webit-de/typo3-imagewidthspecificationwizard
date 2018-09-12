@@ -43,7 +43,7 @@ class ImageWidthSpecificationWizard
     public $extKey = 'imagewidthspecificationwizard'; // The extension key.
 
     /**
-     * Remember whether the current imagewidth eqals one of the preconfigured sizes
+     * Remember whether the current image width equals one of the preconfigured sizes
      * @var bool
      */
     protected $fieldsMatch = false;
@@ -52,8 +52,8 @@ class ImageWidthSpecificationWizard
      * Generate the HTML-code for the wizard attached next to every imagewidth-field within
      * the TYPO3 backend
      *
-     * @param array Parameter array for 'userFunc' wizard type
-     * @param object Parent object
+     * @param array $params Parameter array for 'userFunc' wizard type
+     * @param object $pObj Parent object
      *
      * @return string Returns HTML for the wizard
      */
@@ -100,8 +100,8 @@ class ImageWidthSpecificationWizard
     /**
      * Generate option tags for select field with values defined in TSconfig
      *
-     * @param array The TSconfig of the current page
-     * @param string The current image width of the content element
+     * @param array $modTSconfig The TSconfig of the current page
+     * @param string $imagewidth The current image width of the content element
      *
      * @return string HTML string with all needed option tags of the select field
      */
@@ -156,10 +156,10 @@ class ImageWidthSpecificationWizard
      * The field image width is supposed to be change every time a the user is selecting
      * a different value in the wizard
      *
-     * @param string The uid of the current content element
-     * @param string The distinct name of the image width field in the current content element
-     * @param bool Hide the image width field if a configured value/width is selected (TSconfig)
-     * @param bool Allow the possibility to use an individual value for the image width
+     * @param string $uid The uid of the current content element
+     * @param string $fieldName The distinct name of the image width field in the current content element
+     * @param bool $hideField Hide the image width field if a configured value/width is selected (TSconfig)
+     * @param bool $ownValueDisabled Allow the possibility to use an individual value for the image width
      *
      * @return string Returns the valid JavaScript for the onchange attribute
      */
@@ -193,10 +193,10 @@ class ImageWidthSpecificationWizard
     /**
      * Generate the HTML for the select field
      *
-     * @param string The distinct name of the image width field in the current content element
-     * @param string Unique id for the wizard field
-     * @param string JavaScript for the onchange-attribute of the select field
-     * @param string HTML string containing all options of the select field
+     * @param string $fieldName The distinct name of the image width field in the current content element
+     * @param string $collide Unique id for the wizard field
+     * @param string $JSonchange JavaScript for the onchange-attribute of the select field
+     * @param string $options HTML string containing all options of the select field
      *
      * @return string HTML of the wizards select field
      */
@@ -216,8 +216,8 @@ class ImageWidthSpecificationWizard
      * Hide the field image width if TSconfig option »hideFieldOnMatch« equals true and
      * the current image width equals one of the preconfigured sizes
      *
-     * @param string The distinct name of the image width field in the current content element
-     * @param bool Hide the image width field if a given value/width is selected (TSconfig)
+     * @param string $fieldName The distinct name of the image width field in the current content element
+     * @param bool $hideField Hide the image width field if a given value/width is selected (TSconfig)
      *
      * @return string Returns the JavaScript for TYPO3 $additionalJS_post (appended to form)
      */
@@ -237,8 +237,8 @@ class ImageWidthSpecificationWizard
      * The string to use for translation will not be translated if it does not start with 'LLL',
      * so use a full LLL scheme like 'LLL:EXT:imagewidthspecificationwizard/locallang.xml:tt_content.tx_imagewidthspecificationwizard.custom_value'
      *
-     * @param string The string to use for translation
-     * @param string Alternative string if no translation is found
+     * @param string $label The string to use for translation
+     * @param string $labelAlternative Alternative string if no translation is found
      *
      * @return string The label string - either the original string or the translated value (translated / alternative string if no translation is found but an alternativ string is given / FALSE if no translation is found & an alternativ string isn't given)
      */
