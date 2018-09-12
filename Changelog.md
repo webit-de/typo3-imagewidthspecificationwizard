@@ -1,6 +1,21 @@
 Changelog
 =========
 
+2018-09-12 Lidia Demin <denin@webit.de>
+
+  * 3.2.0
+  * FEATURE Move wizard class to classes folder, use auto loading
+  * FEATURE Move wizard configuration to Overrides/tt_content.php
+  * FEATURE Move page TScofnig to configuration folder
+  * TASK Remove unused icon
+  * TASK CGL and fix typos
+  * TASK Add source labels to translation language file
+  * FEATURE Rename labels to match label convention
+  * BUGFIX Convert settings to boolean to use strict comparison
+  * TASK Add variable names to parameter documentation
+  * TASK Rename methods and variables
+  * TASK Fix spelling in documentation
+
 2018-02-05 Dan Untenzu <untenzu@webit.de>
 
   * 3.1.0
