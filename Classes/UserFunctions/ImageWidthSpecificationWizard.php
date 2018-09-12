@@ -49,7 +49,7 @@ class ImageWidthSpecificationWizard
     protected $fieldsMatch = false;
 
     /**
-     * Generate the HTML-code for the wizard attached next to every imagewidth-field within
+     * Generate the HTML-code for the wizard attached next to every image width field within
      * the TYPO3 backend
      *
      * @param array $params Parameter array for 'userFunc' wizard type
@@ -73,21 +73,21 @@ class ImageWidthSpecificationWizard
             $modTSconfig['properties']['hideFieldOnMatch'] = true;
             $this->fieldsMatch = true;
         }
-        $JSonchange = $this->getJSonchange(
+        $JavaScriptOnChange = $this->getJavaScriptOnChange(
             $params['row']['uid'],
             $params['itemName'],
             $modTSconfig['properties']['hideFieldOnMatch'],
             $modTSconfig['properties']['ownValueDisabled']
         );
 
-        $content = $this->getSelectfield(
+        $content = $this->getSelectField(
             $params['itemName'],
             $collide,
-            $JSonchange,
+            $JavaScriptOnChange,
             $options
         );
 
-        $JSpost = $this->getJSpost(
+        $JSpost = $this->getJavaScriptPost(
             $params['itemName'],
             $modTSconfig['properties']['hideFieldOnMatch'],
             $this->fieldsMatch
@@ -101,11 +101,11 @@ class ImageWidthSpecificationWizard
      * Generate option tags for select field with values defined in TSconfig
      *
      * @param array $modTSconfig The TSconfig of the current page
-     * @param string $imagewidth The current image width of the content element
+     * @param string $imageWidth The current image width of the content element
      *
      * @return string HTML string with all needed option tags of the select field
      */
-    public function getOptions($modTSconfig, $imagewidth)
+    public function getOptions($modTSconfig, $imageWidth)
     {
         $options = '';
 
@@ -121,7 +121,7 @@ class ImageWidthSpecificationWizard
         foreach ($modTSconfig['properties']['sizes.'] as $size => $description) {
             $selected = '';
             // option is »selected« if field image width equals current size in loop
-            if ($size === $imagewidth) {
+            if ($size === $imageWidth) {
                 $this->fieldsMatch = true;
                 $selected = ' selected="selected"';
             }
@@ -133,8 +133,8 @@ class ImageWidthSpecificationWizard
         // prepend option to use an individual value (»--div--« is working as a flag for JavaScript)
         if (false === (bool)$modTSconfig['properties']['ownValueDisabled'] ||
             true === (bool)$modTSconfig['properties']['ownValueDisabled'] &&
-            (false === $this->fieldsMatch && !empty($imagewidth))) {
-            $selected = (false === $this->fieldsMatch && !empty($imagewidth)) ? ' selected="selected"' : '';
+            (false === $this->fieldsMatch && !empty($imageWidth))) {
+            $selected = (false === $this->fieldsMatch && !empty($imageWidth)) ? ' selected="selected"' : '';
             $options = '<option value="--div--"' . $selected . '>'
                 . $this->getLabel($modTSconfig['properties']['ownValueLabel'])
                 . '</option>' . $options;
@@ -146,7 +146,7 @@ class ImageWidthSpecificationWizard
                 . '</option>' . $options;
         }
 
-        $this->fieldsMatch = (false === $this->fieldsMatch && empty($imagewidth)) ? true : $this->fieldsMatch;
+        $this->fieldsMatch = (false === $this->fieldsMatch && empty($imageWidth)) ? true : $this->fieldsMatch;
 
         return $options;
     }
@@ -163,7 +163,7 @@ class ImageWidthSpecificationWizard
      *
      * @return string Returns the valid JavaScript for the onchange attribute
      */
-    public function getJSonchange($uid, $fieldName, $hideField, $ownValueDisabled)
+    public function getJavaScriptOnChange($uid, $fieldName, $hideField, $ownValueDisabled)
     {
         // Double escape JavaScript since its located inside of HTML-tag attributes wraped with quotes
         $content =
@@ -195,14 +195,14 @@ class ImageWidthSpecificationWizard
      *
      * @param string $fieldName The distinct name of the image width field in the current content element
      * @param string $collide Unique id for the wizard field
-     * @param string $JSonchange JavaScript for the onchange-attribute of the select field
+     * @param string $JavaScriptOnChange JavaScript for the onchange-attribute of the select field
      * @param string $options HTML string containing all options of the select field
      *
      * @return string HTML of the wizards select field
      */
-    public function getSelectfield($fieldName, $collide, $JSonchange, $options)
+    public function getSelectField($fieldName, $collide, $JavaScriptOnChange, $options)
     {
-        $content = '<select onchange="' . $JSonchange . '"' .
+        $content = '<select onchange="' . $JavaScriptOnChange . '"' .
             ' name="_WIZARD' . $fieldName . '"' .
             ' class="tceforms-select tceforms-wizardselect"' .
             ' id="tceforms-select-' . $collide . '">' .
@@ -221,7 +221,7 @@ class ImageWidthSpecificationWizard
      *
      * @return string Returns the JavaScript for TYPO3 $additionalJS_post (appended to form)
      */
-    public function getJSpost($fieldName, $hideField)
+    public function getJavaScriptPost($fieldName, $hideField)
     {
         $content = '';
         if ($hideField && $this->fieldsMatch) {
