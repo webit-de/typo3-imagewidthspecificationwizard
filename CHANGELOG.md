@@ -1,5 +1,9 @@
-Changelog
-=========
+# Changelog
+
+2020-10-12 Dan Untenzu <untenzu@webit.de>
+
+  * 3.2.1
+  * BUGFIX Composer: Remove invalid short name
 
 2018-09-12 Lidia Demin <denin@webit.de>
 
